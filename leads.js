@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+
 // Define the lead schema
 const leadSchema = new Schema(
   {
@@ -25,7 +26,10 @@ const leadSchema = new Schema(
     description: { type: String },
     companyId: { type: Schema.Types.ObjectId, ref: 'Company' }, // Reference to companies collection
     addressId: { type: Schema.Types.ObjectId, ref: 'Address' }, // Reference to addresses collection
-    preferredContactMethod: { type: Schema.Types.ObjectId, ref: 'ContactMethod' } // Reference to contact_methods collection
+    preferredContactMethod: { type: Schema.Types.ObjectId, ref: 'ContactMethod' }, // Reference to contact_methods collection
+    linkedInProfile: { type: String },
+    referralSource: { type: String },
+    timeZone: { type: String }
   },
   {
     timestamps: true // Adds createdAt and updatedAt fields
